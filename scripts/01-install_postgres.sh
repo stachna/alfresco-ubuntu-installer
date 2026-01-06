@@ -101,7 +101,7 @@ configure_authentication() {
     backup_file "$pg_hba_file"
     
     # Check if already configured for Alfresco
-    if grep -q "# Alfresco Configuration" "$pg_hba_file"; then
+    if sudo grep -q "# Alfresco Configuration" "$pg_hba_file"; then
         log_info "PostgreSQL authentication already configured for Alfresco"
         return 0
     fi
